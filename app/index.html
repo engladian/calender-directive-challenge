@@ -7,25 +7,24 @@
 </head>
 <body ng-app="calendarDemoApp">
     <div class="container">
-        <div class="row" style="border: 1px solid black; padding: 10px; background-color: lightcyan;">
-<!--date selector form--> 
-            <form name="dateSelectForm" ng-controller="dateSelectController">
+        <form name="dateSelectForm" ng-controller="calenderController">
+            <div class="row" style="border: 1px solid black; padding: 10px; background-color: lightcyan;">
+                <!--date selector form-->
+
                 <div class="col-sm-12 text-left">
                     <label for="monthinputid">
                         <strong>Please pick a month/year: </strong>
                     </label>
-                    <input id="monthinputid" type="month" name="monthinput" ng-model="dateSelect.monthYear"
-                           min="1995-01" max="2035-12" required/>
+                    <input id="monthinputid" type="month" name="monthinput" ng-model="selectedMonthYear"
+                           min="1995-01" max="2035-12" required ng-change="buildCalender()" />
                     <span class="text-danger glyphicon-bold" ng-show="!dateSelectForm.monthinput.$valid">
                         <strong>Please enter a valid month..</strong>
                     </span>
                 </div>
-            </form>
-<!--date selector form END--> 
-
-        </div>
-        <!-- your code for nav and calendar directive instance here -->
-        <calender></calender>
+            </div>
+            <!-- your code for nav and calendar directive instance here -->
+            <calender></calender>
+        </form>
     </div>
     <script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="./bower_components/angular/angular.js"></script>

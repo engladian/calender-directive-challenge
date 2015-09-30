@@ -1,10 +1,7 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
-
-</body>
-</html>
+﻿<div class="row" ng-repeat="row in calenderMap">
+    <div class="col-sm-1" ng-repeat="col in row" 
+         ng-class="{'otherClass': col.otherClass, 'currClass': !col.otherClass}" 
+         style="width: 165px; height: 110px; border: 1px solid blue">
+        <h2>{{col.day}}</h2>
+    </div>
+</div>

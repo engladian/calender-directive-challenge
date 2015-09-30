@@ -1,1 +1,7 @@
 /* your css code goes here */
+.currClass {
+    background-color: lightcyan;
+}
+.otherClass {
+    background-color: lightgray;
+}
