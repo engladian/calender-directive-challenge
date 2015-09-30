@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="calendarDemoApp">
+<head>
+    <title>Calendar Directive Challenge</title>
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body ng-app="calendarDemoApp">
+    <div class="container">
+        <div class="row" style="border: 1px solid black; padding: 10px; background-color: lightcyan;">
+<!--date selector form--> 
+            <form name="dateSelectForm" ng-controller="dateSelectController">
+                <div class="col-sm-12 text-left">
+                    <label for="monthinputid">
+                        <strong>Please pick a month/year: </strong>
+                    </label>
+                    <input id="monthinputid" type="month" name="monthinput" ng-model="dateSelect.monthYear"
+                           min="1995-01" max="2035-12" required/>
+                    <span class="text-danger glyphicon-bold" ng-show="!dateSelectForm.monthinput.$valid">
+                        <strong>Please enter a valid month..</strong>
+                    </span>
+                </div>
+            </form>
+<!--date selector form END--> 
+
+        </div>
+        <!-- your code for nav and calendar directive instance here -->
+        <calender></calender>
+    </div>
+    <script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="./utilities/calendar-range/calendarRange.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+</body>
+</html>
